@@ -27,4 +27,4 @@ RUN exportfs -ra
 RUN update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
 
 # Run script to prepare samba configu files
-CMD /usr/local/bin/smb.shs
+CMD /usr/local/bin/smb.sh

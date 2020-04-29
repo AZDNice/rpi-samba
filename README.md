@@ -1,14 +1,15 @@
-# minidnla in docker for Raspberry Pi / armhf
+# samba on docker for Raspberry Pi / armhf
 
 
-This is minidlna on top of arm64v8/debian-slim. It can be configured with environment variables.
+This project builds a Raspberry PI Docker container embedding a Samba server. This container allows you to share files over network using SMB protocol, used by Windows clients.
 
 ## Usage
 Prefix any config directive of minidlna with MINIDLNA_ and run your container:
 
-sudo docker create --name rpi-minidlna --restart always --net=host -p 8200:8200 -p 1900:1900/udp -v /mnt/mediadisk:/mnt/mediadisk rpi-minidlna
+sudo docker create --name rpi-samba --restart always -p 445:445 -p 139:139 -p 137:137/udp -p 138:138/udp -v /mnt/mediadisk:/mnt/mediadisk rpi-samba
 
-sudo docker start rpi-minidlna
 
-See: http://manpages.ubuntu.com/manpages/raring/man5/minidlna.conf.5.html
+sudo docker start rpi-samba
+
+
 

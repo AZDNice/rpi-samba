@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  minidlna:
+    image: robvde/rpi-minidlna:1.0
+    volumes:
+      - /mnt/mediadisk:/mnt/mediadisk
+    environment:      
+      - MINIDLNA_FRIENDLY_NAME=UNFIPI2
+      - MINIDLNA_PORT=8200
+    ports:
+      - 8200:8200
+    network_mode: "host"
+    restart: always 

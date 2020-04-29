@@ -23,8 +23,8 @@ RUN mkdir /mnt/mediadisk
 COPY exports /etc/exports
 
 # Update nfs configuration
-CMD exportfs -ra
-CMD update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
+RUN exportfs -ra
+RUN update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
 
 # Run script to prepare samba configu files
 CMD /usr/local/bin/smb.shs

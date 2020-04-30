@@ -2,15 +2,15 @@
 FROM arm32v7/alpine:latest
 
 # Run the command inside your image filesystem.
+RUN apk --no-cache add openrc
+RUN	apk --no-cache add samba
 RUN	apk --no-cache add samba-common-tools
-RUN	apk --no-cache add samba-client
-RUN	apk --no-cache add samba-server
 RUN	apk --no-cache add nfs-utils
 RUN	apk --no-cache add rpcbind
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 # Inform Docker that the container is listening on the specified port at runtime.
-EXPOSE 137/udp 138/udp 139 445 111/udp 111/tcp 2049/tcp 2049/udp
+EXPOSE 135/tcp 137/udp 138/udp 139 445 111/udp 111/tcp 2049/tcp 2049/udp
 
 # Place the run.sh that will create the config file and start the process.
 ADD smb.sh /usr/local/bin/smb.sh

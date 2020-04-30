@@ -16,16 +16,9 @@ RUN apk add --update bash && rm -rf /var/cache/apk/*
 # Inform Docker that the container is listening on the specified port at runtime.
 EXPOSE 135/tcp 137/udp 138/udp 139 445 111/udp 111/tcp 2049/tcp 2049/udp
 
-# Place the run.sh that will create the config file and start the process.
-ADD smb.sh /usr/local/bin/smb.sh
-RUN chmod +x /usr/local/bin/*
-
 # Create directory for mount point.
 RUN mkdir /mnt/mediadisk
-
-# Create directory for supervisor.
-RUN mkdir /etc/supervisor
-COPY supervisord.conf /etc/supervisor/supervisord.conf
+RUN mkdir /etc/rpi-samba
 
 # Overwrite exports nfs configuration
 COPY exports /etc/exports
@@ -33,4 +26,4 @@ COPY exports /etc/exports
 # Run script to prepare samba config files
 RUN /usr/local/bin/smb.sh
 
-ENTRYPOINT ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+ENTRYPOINT ["supervisord", "-c", "/etc/rpi-samba/supervisord.conf"]

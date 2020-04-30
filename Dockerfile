@@ -14,6 +14,7 @@ EXPOSE 137/udp 138/udp 139 445 111/udp 111/tcp 2049/tcp 2049/udp
 
 # Place the run.sh that will create the config file and start the process.
 ADD smb.sh /usr/local/bin/smb.sh
+ADD nfs.sh /usr/local/bin/nfs.sh
 RUN chmod +x /usr/local/bin/*
 
 # Create directory for mount point.
@@ -22,9 +23,7 @@ RUN mkdir /mnt/mediadisk
 # Overwrite exports nfs configuration
 COPY exports /etc/exports
 
-# Update nfs configuration
-RUN exportfs -ra
-RUN update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
-
 # Run script to prepare samba configu files
 CMD /usr/local/bin/smb.sh
+
+ENTRYPOINT ["nfs.sh"]

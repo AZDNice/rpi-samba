@@ -6,8 +6,9 @@ This project builds a Raspberry PI Docker container embedding a Samba server. Th
 ## Usage
 Prefix any config directive of minidlna with MINIDLNA_ and run your container:
 
-sudo docker create --name rpi-samba --restart always -p 445:445 -p 139:139 -p 137:137/udp -p 138:138/udp -v /mnt/mediadisk:/mnt/mediadisk rpi-samba
+sudo docker create --name rpi-samba --restart always -p 445:445 -p 139:139 -p 137:137/udp -p 138:138/udp -p 111:111/udp -p 111:111/tcp -p 2049:2049/tcp -p 2049:2049/udp -v /mnt/mediadisk:/mnt/mediadisk rpi-samba
 
+sudo docker run --name rpi-samba -p 445:445 -p 139:139 -p 137:137/udp -p 138:138/udp -p 111:111/udp -p 111:111/tcp -p 2049:2049/tcp -p 2049:2049/udp -v /mnt/mediadisk:/mnt/mediadisk rpi-samba
 
 sudo docker start rpi-samba
 

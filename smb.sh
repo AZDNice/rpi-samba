@@ -38,6 +38,3 @@ guest ok = yes
 EOF
 ionice -c 3 nmbd -D
 exec ionice -c 3 smbd -FS --configfile=/etc/samba/smb.conf </dev/null
-
-exec service rpcbind restart
-exec service nfs-kernel-server restart

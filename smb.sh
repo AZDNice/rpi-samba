@@ -36,5 +36,4 @@ directory mask=0777
 public=yes
 guest ok = yes
 EOF
-ionice -c 3 nmbd -D
-exec ionice -c 3 smbd -FS --configfile=/etc/samba/smb.conf </dev/null
+

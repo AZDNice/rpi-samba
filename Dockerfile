@@ -23,7 +23,4 @@ RUN mkdir /etc/rpi-samba
 # Overwrite exports nfs configuration
 COPY exports /etc/exports
 
-# Run script to prepare samba config files
-RUN /usr/local/bin/smb.sh
-
 ENTRYPOINT ["supervisord", "-c", "/etc/rpi-samba/supervisord.conf"]

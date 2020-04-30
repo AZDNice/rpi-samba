@@ -18,9 +18,9 @@ usershare allow guests = yes
 force directory mode = 0755
 browsable = yes
 writable = yes
-guest account = pi
-force user = pi
-force group = pi
+guest account = root
+force user = root
+force group = root
 [homes]
 comment = Home Directories
 browseable = no

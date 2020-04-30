@@ -16,7 +16,7 @@ EXPOSE 135/tcp 137/udp 138/udp 139 445 111/udp 111/tcp 2049/tcp 2049/udp
 
 # Place the run.sh that will create the config file and start the process.
 ADD smb.sh /usr/local/bin/smb.sh
-ADD nfs.sh /usr/local/bin/run.sh
+ADD run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/*
 
 # Create directory for mount point.

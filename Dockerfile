@@ -2,8 +2,10 @@
 FROM arm32v7/alpine:latest
 
 # Run the command inside your image filesystem.
+RUN	apk --no-cache add samba-common-tools
 RUN	apk --no-cache add samba-common-bin
-RUN	apk --no-cache add samba
+RUN	apk --no-cache add samba-client
+RUN	apk --no-cache add samba-server
 RUN	apk --no-cache add nfs-kernel-server
 RUN	apk --no-cache add nfs-common
 RUN	apk --no-cache add rpcbind

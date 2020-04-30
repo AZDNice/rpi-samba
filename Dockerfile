@@ -5,7 +5,7 @@ FROM arm32v7/alpine:latest
 RUN	apk --no-cache add samba-common-tools
 RUN	apk --no-cache add samba-client
 RUN	apk --no-cache add samba-server
-RUN	apk --no-cache add nfs-kernel-server
+RUN	apk --no-cache add nfs-server
 RUN	apk --no-cache add nfs-common
 RUN	apk --no-cache add rpcbind
 RUN apk add --update bash && rm -rf /var/cache/apk/*

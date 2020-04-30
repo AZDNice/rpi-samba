@@ -6,7 +6,6 @@ RUN	apk --no-cache add samba-common-tools
 RUN	apk --no-cache add samba-client
 RUN	apk --no-cache add samba-server
 RUN	apk --no-cache add nfs-utils
-RUN	apk --no-cache add nfs-server
 RUN	apk --no-cache add rpcbind
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 

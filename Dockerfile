@@ -24,7 +24,7 @@ RUN mkdir /mnt/mediadisk
 
 # Create directory for supervisor.
 RUN mkdir /etc/supervisor
-COPY supervisor.conf /etc/supervisor/supervisor.conf
+COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 # Overwrite exports nfs configuration
 COPY exports /etc/exports

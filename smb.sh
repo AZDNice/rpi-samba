@@ -2,6 +2,7 @@
 
 cat > /etc/samba/smb.conf <<EOF
 [global]
+netbios name = UNIFIPI2
 workgroup = WORKGROUP
 log file = /var/log/samba/log.%m
 max log size = 1000
@@ -30,6 +31,27 @@ directory mask = 0700
 valid users = %S
 [Videos]
 path = /mnt/mediadisk/Videos
+writeable=yes
+create mask=0777
+directory mask=0777
+public=yes
+guest ok = yes
+[Pictures]
+path = /mnt/mediadisk/Pictures
+writeable=yes
+create mask=0777
+directory mask=0777
+public=yes
+guest ok = yes
+[Audio]
+path = /mnt/mediadisk/Audio
+writeable=yes
+create mask=0777
+directory mask=0777
+public=yes
+guest ok = yes
+[nfs]
+path = /mnt/mediadisk/nfs
 writeable=yes
 create mask=0777
 directory mask=0777

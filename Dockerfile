@@ -1,5 +1,5 @@
 # Use the official image as a parent image.
-FROM arm32v7/alpine:latest
+FROM arm32v7/alpine:3.11.6
 
 # Run the command inside your image filesystem.
 RUN apk --no-cache upgrade && \

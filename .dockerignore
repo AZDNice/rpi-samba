@@ -1,3 +1,6 @@
 .git
 README.md
 LICENSE
+docker-compose-yml
+smb.conf
+supervisord.conf

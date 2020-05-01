@@ -1,6 +1,6 @@
 # SMB and NFS server on docker for Raspberry Pi
 
-This project builds a Raspberry PI Docker container embedding a SAMBA(SMB) and NFS. This container allows you to share files over network using SMB and/or NFSprotocol. This is for home usage typically in combination with a DLNA server, hence no authentication and wide open. The expectation is that the storage used for storing your media files is directly attaced to the Raspberry PI.
+This project builds a Raspberry PI Docker container embedding Samba(SMB) and NFS. This container allows you to share files over network using SMB and/or NFS protocols. This is for home usage typically in combination with a DLNA server, hence no authentication and wide open. The expectation is that the storage used for storing your media files is directly attaced to the Raspberry PI.
 
 Supervisor is used to start smd and nfs processes. The supervisor configuration file is expected to be stored in the same folder as the smb/nfs configuration files.
 

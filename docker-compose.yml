@@ -2,10 +2,10 @@ version: "2"
 
 services:
   minidlna:
-    image: robvde/rpi-samba:1.0
+    image: robvde/rpi-samba:latest
     volumes:
       - /mnt/mediadisk:/mnt/mediadisk
-      - /home/pi/rpi-samba:/etc/rpi-samba
+      - /docker/pi/rpi-samba:/etc/rpi-samba
     ports:
       - 135:135/udp
       - 137:137/udp
